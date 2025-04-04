@@ -1,3 +1,5 @@
+import random
+
 class Laptop:
     # declaracion de constructor: siempre con __init__(self)
     # self es el primer parametro que debe tener el contructor y representa una autoreferencia a la instancia
@@ -15,6 +17,15 @@ class Laptop:
     
     def valor_descuento(self, descuento):
         return (self.costo*descuento)/100
+    
+    def realizar_diagnostico_sistema(self):
+        resultado={
+            "MARCA" : f"{self.marca}",
+            "PROCESADOR" : f"{self.procesador}" if self.procesador is None else "POR DEFINIR",
+            "MEMORIA RAM" : "OK" if self.memoria>=8 else "Aumentar memoria RAM",
+            "BATERIA" : "OK" if random.choice([True,False]) else "Cambiar de bateria"
+        }
+        return resultado
     
     # Metodos estaticos
     @staticmethod
