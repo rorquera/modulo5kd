@@ -4,9 +4,12 @@ import random
 # Herencia: se pasa por argumento la clase padre "Laptop"
 class Laptop_Business(Laptop):
     def __init__(self, marca, memoria, almacenamiento, duración_bateria, costo=500, impuesto=10):
-        super().__init__(marca, memoria, costo, impuesto)
+        super().__init__(marca, "i5", memoria, 800,12)
         self.almacenamiento=almacenamiento
         self.duración_bateria=duración_bateria
+
+    def __str__(self):
+        return f"Marca: {self.marca} \n Memoria: {self.memoria} \n Almacenamiento: {self.almacenamiento} \n Duracion bateria: {self.duración_bateria} \n"
 
     # Sobreescritura: se cambia el cuerpo del metodo realizar_diagnostico_sistema 
     def realizar_diagnostico_sistema(self):
